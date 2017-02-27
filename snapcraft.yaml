@@ -1,0 +1,23 @@
+name: openstack-cli
+version: '2.3.1'
+summary: OpenStack Command-line Client
+description: |
+  OpenStackClient (aka OSC) is a command-line client for OpenStack that
+  brings the command set for Compute, Identity, Image, Object Store and
+  Block Storage APIs together in a single shell with a uniform command
+  structure.
+grade: stable
+confinement: strict
+
+apps:
+  openstack-cli:
+    command: openstack
+    plugs:
+      - network
+
+parts:
+  openstack-cli:
+    plugin: python
+    python-version: python3
+    python-packages:
+      - python-openstackclient==2.3.1
