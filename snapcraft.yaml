@@ -13,6 +13,7 @@ apps:
   openstack-cli:
     command: openstack
     plugs:
+      - home
       - network
 
 parts:
